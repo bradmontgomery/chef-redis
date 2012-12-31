@@ -26,7 +26,7 @@ port <%= node['redis']['port'] %>
 
 # If you want you can bind a single interface, if the bind option is not
 # specified all the interfaces will listen for incoming connections.
-<% if node['redis']['bind'] %>
+<% if node['redis']['bind'] && !node['redis']['bind'].empty? %>
 bind <%= node['redis']['bind'] %>
 <% end %>
 
